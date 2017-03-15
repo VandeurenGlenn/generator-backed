@@ -1,0 +1,8 @@
+{
+  "bundles": [
+    {
+      "src": "src/<%= name %>.js",
+      "dest": "dist/<%= name %>.js"
+    }
+  ]
+}

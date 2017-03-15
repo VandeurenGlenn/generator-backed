@@ -1,0 +1,13 @@
+{
+  "name": "<%= name %>",
+  "version": "<%= version %>",
+  "author": {
+    "name": "<%= authorName %>",
+    "email": "<%= authorEmail %>",
+    "url": "<%= authorUrl %>"
+  },
+  "main": "<%= name %>.html",
+  "dependencies": {
+    "backed": "*"
+  }
+}
