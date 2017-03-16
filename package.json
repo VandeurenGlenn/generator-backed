@@ -1,6 +1,6 @@
 {
   "name": "generator-backed",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "The official Backed app/element yeoman generator",
   "homepage": "",
   "author": {
@@ -57,6 +57,5 @@
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp"
-  },
-  "private": true
+  }
 }
