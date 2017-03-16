@@ -10,11 +10,33 @@ npm install -g yo
 npm install -g generator-backed
 ```
 
-Then generate your new project:
+## Generate your new project:
 
+### App
 ```bash
 yo backed
 ```
+
+### Element
+```bash
+yo backed:element
+```
+
+## API
+### Options backed[options]
+#### default
+Type: `boolean`<br>
+Default: `false`<br>
+Options: `true`
+
+When true, skips prompting
+
+```bash
+yo backed --default
+```
+
+
+
 
 ## Getting To Know Yeoman
 
