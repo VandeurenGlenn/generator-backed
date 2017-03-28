@@ -9,7 +9,7 @@ module.exports = class extends Generator {
   }
 
   configuring() {
-    this.composeWith(require.resolve('generator-backed-element/app'), {default: this.options.default});
+    this.composeWith(require.resolve('generator-backed-element/element'), {default: this.options.default});
   }
 
   install() {
