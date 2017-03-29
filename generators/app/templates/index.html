@@ -24,7 +24,7 @@
   </head>
   <body>
     <<%= name %>>
-      <hello-hello></hello-hello>
+      <% if (boilerplates) { %><hello-hello></hello-hello><% } %>
     </<%= name %>>
     <script src="<%= name %>.js"></script>
   </body>

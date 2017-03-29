@@ -32,7 +32,7 @@ module.exports = class extends Generator {
       default: this.name,
       when: !this.options.name
     }, {
-      type: 'input',
+      type: 'confirm',
       name: 'boilerplates',
       message: 'Include element boilerplates?',
       default: true
@@ -62,7 +62,10 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath('index.html'),
       this.destinationPath('src/index.html'),
-      {name: this.props.name}
+      {
+        name: this.props.name,
+        boilerplates: this.props.boilerplates
+      }
     );
 
     if (this.props.boilerplates) {
