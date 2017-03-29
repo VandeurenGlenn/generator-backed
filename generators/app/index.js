@@ -31,23 +31,30 @@ module.exports = class extends Generator {
       message: 'Whats the name for your app?',
       default: this.name,
       when: !this.options.name
+    }, {
+      type: 'input',
+      name: 'boilerplates',
+      message: 'Include element boilerplates?',
+      default: true
     }];
 
     return this.prompt(prompts).then(props => {
       // To access props later use this.props.someAnswer;
-      this.name = props.name || this.name;
+      props.name = props.name || this.name;
+      this.props = props;
     });
   }
 
   configuring() {
     this.composeWith(require.resolve('generator-backed-element/element'), {
       default: this.options.default,
-      name: this.name
+      name: this.props.name
     });
 
     this.composeWith(require.resolve('./../app-importer'), {
       default: this.options.default,
-      name: this.name
+      boilerplates: this.props.boilerplates,
+      name: this.props.name
     });
   }
 
@@ -55,12 +62,14 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath('index.html'),
       this.destinationPath('src/index.html'),
-      {name: this.name}
+      {name: this.props.name}
     );
 
-    this.fs.copy(
-      this.templatePath('*.js'),
-      this.destinationPath('src/')
-    );
+    if (this.props.boilerplates) {
+      this.fs.copy(
+        this.templatePath('*.js'),
+        this.destinationPath('src/')
+      );
+    }
   }
 };
