@@ -31,7 +31,7 @@ module.exports = class extends Generator {
     // Re-read the content at this point because a composed generator might modify it.
     const currentBacked = this.fs.readJSON(this.destinationPath('backed.json'), {});
     currentBacked.sources = [{
-      src: 'src/*.html',
+      src: ['src/*.html'],
       dest: 'dist'
     }, {
       src: [
